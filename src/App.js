@@ -1,10 +1,14 @@
-import { Button } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from "./pages/home";
 
 function App() {
   return (
-    <div>
-      <Button variant="primary">Primary</Button>
-    </div>
+    
+    <BrowserRouter>
+      <Routes>
+        <Route index element ={<Home/>} />
+     </Routes>
+    </BrowserRouter>
   );
 }
 
