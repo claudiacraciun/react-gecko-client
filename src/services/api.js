@@ -5,9 +5,12 @@ const instance = axios.create({
     headers: {'Accept': 'application/json'}
 })
 
-const getCoinsMarkets = () => {
-    return instance.get('/coins/markets?vs_currency=eur&order=market_cap_desc')
+const getCoinsMarkets = (pageNo) => {
+    return instance.get('/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page='+pageNo)
 }
 
+const getCoinById = (id) => {
+    return instance.get('/coins/'+id)
+}
 
-export { getCoinsMarkets }
+export { getCoinsMarkets, getCoinById }
